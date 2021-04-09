@@ -3,10 +3,10 @@ $VMName = 'TARGET VM'
 $VMServer = 'VM SERVER'
 $VMSwitch = 'VM SWITCH'
 # Customizing VM names for personalization. Hoping to add this to an array of some kind eventually.
-if ( $VMName = 'DIT-VM-SAL-01') {$RepID = 'WS'}   
-if ( $VMName = 'DIT-VM-SAL-02') {$RepID = 'BS14'}
-if ( $VMName = 'DIT-VM-SAL-03') {$RepID = 'DK'}
-if ( $VMName = 'DIT-VM-SAL-04') {$RepID = 'TE'} 
+if ( $VMName = 'DIT-VM-SAL-01') {$RepID = 'Rep1'}   
+if ( $VMName = 'DIT-VM-SAL-02') {$RepID = 'Rep2'}
+if ( $VMName = 'DIT-VM-SAL-03') {$RepID = 'Rep3'}
+if ( $VMName = 'DIT-VM-SAL-04') {$RepID = 'Rep4'} 
 
 # Functions
 function Disconnect-DIT-VM {
@@ -48,10 +48,10 @@ function Show-VM-Menu
     )
     Clear-Host
     Write-Host $Title
-    Write-Host "[1] - Press '1' to select WS Remote Workstation"
-    Write-Host "[2] - Press '2' to select BS14 Remote Workstation"
-    Write-Host "[3] - Press '3' to select DK Remote Workstation"
-    Write-Host "[4] - Press '4' to select Unassigned Remote Workstation"
+    Write-Host "[1] - Press '1' to select Rep1 Remote Workstation"
+    Write-Host "[2] - Press '2' to select Rep2 Remote Workstation"
+    Write-Host "[3] - Press '3' to select Rep3 Remote Workstation"
+    Write-Host "[4] - Press '4' to select Rep4 Remote Workstation"
     Write-Host "[5] - Press '5' to get information for all remote workstations"
     Write-Host "[q] - Press 'q' to quit."
 }
@@ -63,7 +63,7 @@ switch ($VMMenuSelection)
     '1' 
         {
         $VMName = 'DIT-VM-SAL-01'
-        $RepID = 'WS' 
+        $RepID = 'Rep1' 
         Clear-Host
         Get-VM-Status
         ([string]$WStitle = "Select action to take on Remote Workstation")
@@ -92,7 +92,7 @@ switch ($VMMenuSelection)
     '2'
         {
         $VMName = 'DIT-VM-SAL-02'
-        $RepID = 'BS14' 
+        $RepID = 'Rep2' 
         Clear-Host
         Get-VM-Status
         ([string]$WStitle = "Select action to take on Remote Workstation")
@@ -121,7 +121,7 @@ switch ($VMMenuSelection)
     '3'
         {
         $VMName = 'DIT-VM-SAL-03'
-        $RepID = 'DK' 
+        $RepID = 'Rep3' 
         Clear-Host
         Get-VM-Status
         ([string]$WStitle = "Select action to take on Remote Workstation")
@@ -150,7 +150,7 @@ switch ($VMMenuSelection)
     '4'
         {
         $VMName = 'DIT-VM-SAL-04'
-        $RepID = 'TE' 
+        $RepID = 'Rep4' 
         Clear-Host
         Get-VM-Status
         ([string]$WStitle = "Select action to take on Remote Workstation")
